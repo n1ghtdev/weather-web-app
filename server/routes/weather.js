@@ -3,17 +3,13 @@ import express from 'express';
 
 const router = express.Router();
 
-const WEATHER_CURRENT = '/weather/current';
-const WEATHER_FORECAST = '/weather/forecast';
+router.get('/geolocation', (req, res) => {
+  const ip = (req.headers['x-forwarded-for'] || '').split(',').pop() || 
+    req.connection.remoteAddress || 
+    req.socket.remoteAddress || 
+    req.connection.socket.remoteAddress;
 
-router.post(WEATHER_CURRENT, (req, res) => {
-  // const result = addTodo(req.body);
-  // res.send(JSON.stringify(result));
-});
-
-router.post(WEATHER_FORECAST, (req, res) => {
-  // const result = removeTodo(req.body);
-  // return res.status(200).send(result);
+  res.send(JSON.stringify({ ip }));
 });
 
 export { router as ApiRoute };

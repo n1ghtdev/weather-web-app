@@ -14,12 +14,13 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+app.use(routes);
+
 setup(app, {
   outputPath: resolve(process.cwd(), 'build'),
   publicPath: '/',
 });
 
-app.use(routes);
 
 app.listen(port, (err) => {
   if (err) {

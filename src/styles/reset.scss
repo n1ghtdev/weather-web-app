@@ -5,3 +5,7 @@ body {
 ul, li {
   margin: 0;
 }
+
+*:focus {
+  outline: 0;
+}

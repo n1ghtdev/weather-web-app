@@ -1,0 +1,21 @@
+.base-section {
+  flex-grow: 1;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -50px;
+}
+
+.main-container {
+
+}
+
+.search-container {
+  background-color: #fff;
+  box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(59,64,69,0.1);
+  max-width: 670px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 30px;
+}

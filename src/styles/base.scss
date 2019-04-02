@@ -16,6 +16,12 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+body {
+  background: url(https://img2.goodfon.ru/original/1920x1080/3/d9/nissan-r35-gtr-blue-japan.jpg) no-repeat;
+  background-color: #0f4777;
+  background-blend-mode: lighten;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -64,4 +70,10 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-direction: column;
   }
+}
+
+#app {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
 }
