@@ -24,7 +24,7 @@ export const getLocationKey = (ipAddress) => {
 
   const getRequestURL = getApiLocationURL(ipAddress);
 
-  return postRequest(getRequestURL);
+  return postRequest(getRequestURL).then(data => data);
 };
 
 const postRequest = (url) => {
@@ -36,9 +36,6 @@ const postRequest = (url) => {
     },
   })
     .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      return data;
-    })
+    .then(data => data.Key)
     .catch(error => console.log(error));
 };

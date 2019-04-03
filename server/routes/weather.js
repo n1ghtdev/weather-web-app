@@ -10,7 +10,6 @@ router.get('/geolocation', (req, res) => {
     req.connection.socket.remoteAddress;
 
   getLocationKey(ip).then(data => res.send(JSON.stringify(data)));
-  // res.send(JSON.stringify({ ip }));
 });
 
 export { router as ApiRoute };

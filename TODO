@@ -1,7 +1,12 @@
+Wednesday, March 3, 2019:
+  ☐ organize folder structure
+  ☐ clear weatherActions.js script file
+  ☐ get current weather, 5-day forecast by location key
+
 Tuesday, March 2, 2019:
-  ☐ determine user location by making a call to server
+  ✔ determine user location by making a call to server @done(19-04-03 21:55)
   (https://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node)
-    ☐ on page load make call to server
-    ☐ server determines ip address
-    ☐ check ip address geolocation by some other api websites
-    ☐ return geolocation
+    ✔ on page load make call to server @done(19-04-03 21:54)
+    ✔ server determines ip address @done(19-04-03 21:54)
+    ✔ check ip address geolocation with AccuWeather API @done(19-04-03 21:55)
+    ✘ return geolocation @cancelled(19-04-03 21:55)
