@@ -1,3 +1,6 @@
+# secret
+server/config/apiKey.js
+
 # Don't check auto-generated stuff into git
 coverage
 build
