@@ -3,6 +3,11 @@ Wednesday, March 3, 2019:
   ☐ clear weatherActions.js script file
   ☐ get current weather, 5-day forecast by location key
 
+Thursday, March 4, 2019:
+  ☐ clear up in client-side index.js
+  ✔ cache some data in localStorage @done(19-04-04 22:06)
+  ☐ refactor typesOptions
+
 Tuesday, March 2, 2019:
   ✔ determine user location by making a call to server @done(19-04-03 21:55)
   (https://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node)

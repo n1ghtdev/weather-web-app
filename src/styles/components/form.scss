@@ -1,10 +1,38 @@
 .form {
   text-align: center;
   &_row {
-
+    width: 100%;
   }
   &_label {
 
+  }
+  &_input-container {
+    position: relative;
+    overflow: hidden;
+    &-underline {
+      &:after, &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+      }
+      &:after {
+        background-color: #1a65aa;
+        transform: translateX(-100%);
+        transition: all .25s;
+        opacity: 0;
+      }
+      &:before {
+        background-color: #ececec;
+      }
+      &:focus-within:after {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
   }
   &_input {
     width: 100%;
@@ -13,12 +41,13 @@
     padding-left: 10px;
     padding-right: 10px;
     color: #7c7c7c;
-    border-bottom: 1px solid #ececec;
+    // border-bottom: 2px solid #ececec;
+    border-left: 1px solid #f3f3f3;
     font-size: 1.25rem;
+    transition: all .25s;
   }
   &_button {
-    margin-top: 20px;
     border: none;
-    padding: 15px 25px;
+    padding: 12px 25px;
   }
 }
