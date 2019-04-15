@@ -44,7 +44,7 @@ Paragraph.defaultProps = {
   FontSize: '1rem',
   FontStyle: 'normal',
   FontWeight: 'normal',
-  Color: '#000',
+  Color: 'inherit',
   LineHeight: 1.5,
   textAlign: 'inherit',
   Margin: '0',

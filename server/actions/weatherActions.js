@@ -6,7 +6,7 @@ const IP_INDENTIFY_API = 'http://ip-api.com/';
 const LOCATION_API = 'https://maps.googleapis.com/maps/api/geocode/';
 
 // filter data for weather API
-const excludeBlocks = ['minutely', 'flags', 'alerts'];
+const excludeBlocks = ['minutely', 'alerts'];
 
 const getLocationApiUrl = (query) =>
   `${LOCATION_API}json?address=${query}&key=${GOOGLE_API_KEY}`;

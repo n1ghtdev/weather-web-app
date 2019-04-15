@@ -1,7 +1,8 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const A = styled.a`
+const Link = styled.a`
   text-decoration: ${({ textDecoration }) => textDecoration};
   font-weight: ${({ fontWeight }) => fontWeight};
   font-size: ${({ fontSize }) => typeof fontSize === 'string' ? fontSize : `${fontSize}px`};
@@ -13,6 +14,12 @@ const A = styled.a`
     opacity: .75;
   }
 `;
+
+const A = (props) => (
+  <Link {...props}>
+    <span>{props.children}</span>
+  </Link>
+);
 
 A.propTypes = {
   children: PropTypes.any,

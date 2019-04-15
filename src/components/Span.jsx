@@ -23,7 +23,7 @@ Span.defaultProps = {
   FontSize: 'inherit',
   FontStyle: 'normal',
   FontWeight: 'normal',
-  Color: '#000',
+  Color: 'inherit',
 };
 
 export default Span;

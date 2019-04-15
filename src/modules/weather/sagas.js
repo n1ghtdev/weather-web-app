@@ -1,9 +1,6 @@
 import { call, takeEvery, put } from 'redux-saga/effects';
 import { getRequest, postRequest } from '../../utils/fetchData';
-import {
-  GET_FORECAST_BY_QUERY,
-  GET_FORECAST_BY_IP,
-} from './types';
+import { GET_FORECAST_BY_QUERY, GET_FORECAST_BY_IP } from './types';
 import {
   getForecastByQuerySuccess,
   getForecastByIPSuccess,
@@ -17,14 +14,6 @@ export function* watchGetForecastByQuery() {
 export function* watchGetForecastByIP() {
   yield takeEvery(GET_FORECAST_BY_IP, getForecastByIPAsync);
 }
-
-// export function* watchGetForecastHourly() {
-//   yield takeEvery(GET_FORECAST_HOURLY, getForecastHourlyAsync);
-// }
-
-// export function* watchGetForecastDaily() {
-//   yield takeEvery(GET_FORECAST_DAILY, getForecastDailyAsync);
-// }
 
 function* getForecastByQueryAsync({ payload: { query } }) {
   try {

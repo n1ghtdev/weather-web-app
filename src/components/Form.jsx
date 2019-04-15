@@ -41,6 +41,7 @@ Form.propTypes = {
   children: PropTypes.any,
   action: PropTypes.string,
   method: PropTypes.string,
+  onSubmit: PropTypes.func,
 };
 
 export default Form;

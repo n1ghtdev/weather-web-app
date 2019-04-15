@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 const baseHeadingStyles = css`
-  color: ${({ Color }) => Color || '#000'};
+  color: ${({ Color }) => Color || 'inherit'};
   font-family: ${({ FontFamily }) => FontFamily};
   font-weight: ${({ FontWeight }) => FontWeight || 'bold'};
   font-size: ${({ FontSize }) => FontSize && `${FontSize}!important`};

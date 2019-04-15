@@ -17,7 +17,7 @@ class SearchForm extends Component {
   onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
-  onClick = (e) => {
+  onSubmit = (e) => {
     e.preventDefault();
 
     this.props.getForecastByQuery(this.state.query);
@@ -27,7 +27,7 @@ class SearchForm extends Component {
       <Container>
         <Row Padding="20px 0">
           <Col lg={8} Margin="0 auto">
-            <Form>
+            <Form onSubmit={this.onSubmit}>
               <Form.Row>
                 <Form.Label htmlFor="search-input">
                   <Form.Input
@@ -39,7 +39,7 @@ class SearchForm extends Component {
                   />
                 </Form.Label>
               </Form.Row>
-              <Form.Button type="button" onClick={this.onClick}>Search</Form.Button>
+              <Form.Button type="button">Search</Form.Button>
             </Form>
           </Col>
         </Row>

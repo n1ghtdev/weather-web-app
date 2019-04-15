@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Section from '../components/Section';
 import { getForecastByIP } from '../modules/weather/actions';
 import CurrentWeather from './CurrentWeather';
 import HourlyForecast from './HourlyForecast';
 import DailyForecast from './DailyForecast';
+import Main from '../components/Main';
 
 class WeatherSection extends Component {
   static propTypes = {
@@ -36,14 +36,15 @@ class WeatherSection extends Component {
       currently, hourly, daily, timezone,
     } = this.props.weather.data;
     const { loaded } = this.props.weather;
+    console.log(this.props.weather);
     return (
       <Fragment>
         { loaded ?
-          <Section>
+          <Main>
             <CurrentWeather weather={currently} timezone={timezone} />
             <HourlyForecast weather={hourly} />
             <DailyForecast weather={daily} />
-          </Section> :
+          </Main> :
           'loading...' }
       </Fragment>
     );

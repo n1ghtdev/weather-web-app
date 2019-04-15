@@ -6,6 +6,7 @@ const Nav = styled.ul`
   display: flex;
   list-style-type: none;
   height: 100%;
+  margin-top: -3px;
 `;
 
 const Item = styled.li`
@@ -30,6 +31,9 @@ const Link = styled(A)`
   color: #4a5157;
   text-decoration: none;
   font-size: 0.875rem;
+  ${({ active }) => active && `
+    background-color: green;
+  `}
 `;
 
 Nav.propTypes = {
