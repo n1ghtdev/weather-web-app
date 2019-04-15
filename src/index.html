@@ -3,93 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Weather Web App</title>
+  <link rel="icon" href="/favicon.ico" />
+  <title>Rained.App – Current Weather / Daily and Weekly Weather Forecast</title>
 </head>
 <body>
-  <div id="app">
-    <header class="app-header">
-      <div class="container flex-row">
-        <nav class="app-header_nav">
-          <ul class="nav nav_list">
-            <li class="nav_item nav_item-active"><a href="#">Homepage</a></li>
-            <li class="nav_item"><a href="#">About</a></li>
-            <li class="nav_item"><a href="#">Contacts</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="base-section">
-      <div class="container">
-        <main class="main-container">
-          <div class="search-container">
-            <form action="#" method="get" class="form flex-row" id="search-form">
-              <div class="form_row">
-                <label class="form_label" for="place">
-                  <div class="form_input-container form_input-container-underline">
-                    <input type="text" id="place" class="form_input">
-                  </div>
-                </label>
-              </div>
-              <button class="form_button">Search</button>
-            </form>
-          </div>
-          <div class="forecast-container">
-            <div class="current-weather">
-              <div class="current-weather_container">
-                <h2 class="current-weather_location" id="timezone">Kyiv, Ukraine</h2>
-                <div class="current-weather_temp-info">
-                  <i class="current-weather_icon" id="icon">O</i>
-                  <span class="current-weather_temperature" id="temperature">9</span>
-                  <ul class="current-weather_temp-t-list">
-                    <li class="current-weather_temp-t-item current-weather_temp-t-item-active">c</li>
-                    <li class="current-weather_temp-t-item">f</li>
-                  </ul>
-                </div>
-                <span class="current-weather_summary" id="summary">Sunny</span>
-                <span class="current-weather_update-time">
-                  Updated as of <span id="update-time">08:24 PM</span>
-                </span>
-                <ul class="current-weather_info">
-                  <li class="current-weather_info-item">
-                    Feels like <span id="apparent-temp">9c</span>
-                  </li>
-                  <li class="current-weather_info-item">
-                    Wind <span id="wind-speed">7km/h</span>
-                  </li>
-                  <li class="current-weather_info-item">
-                    Visibility <span id="visibility">8 km</span>
-                  </li>
-                  <li class="current-weather_info-item">
-                    Barometer <span id="pressure">1018.00 mb</span>
-                  </li>
-                  <li class="current-weather_info-item">
-                    Humidity <span id="humidity">25%</span>
-                  </li>
-                  <li class="current-weather_info-item">
-                    Dew Point <span id="dew-point">-9c</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="hourly-forecast">
-
-            </div>
-            <div class="daily-forecast">
-
-            </div>
-          </div>
-        </main>
-        <div class="left-container">
-  
-        </div>
-      </div>
-    </div>
-    <footer class="app-footer">
-      <div class="container">
-        <span>developed by <a href="https://github.com/Nickew" target="_blank" rel="noopener">Nickew</a></span>
-      </div>
-    </footer>
-  </div>
+  <noscript>If you're seeing this message, that means
+    <strong>JavaScript has been disabled on your browser</strong>, please
+    <strong>enable JS</strong> to make this app work.
+  </noscript>
+  <div id="app"></div>
 </body>
 </html>

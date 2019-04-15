@@ -14,7 +14,7 @@ module.exports = (options) => ({
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -33,6 +33,11 @@ module.exports = (options) => ({
       {
         test: /\.(eot|otf|ttf|woff|woff2)$/,
         use: 'file-loader',
+      },
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        loader: 'json-loader',
       },
       {
         test: /\.svg$/,
@@ -97,7 +102,7 @@ module.exports = (options) => ({
 
   resolve: {
     modules: ['src', 'node_modules'],
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
   },
 
   devtool: options.devtool,

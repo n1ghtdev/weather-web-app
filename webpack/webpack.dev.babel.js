@@ -14,7 +14,7 @@ module.exports = require('./webpack.base.babel')({
   mode: 'development',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'src/index.js'),
+    path.join(process.cwd(), 'src/index.jsx'),
   ],
   output: {
     filename: '[name].js',

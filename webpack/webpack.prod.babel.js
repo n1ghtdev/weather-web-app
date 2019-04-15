@@ -7,7 +7,7 @@ import CompressionPlugin from 'compression-webpack-plugin';
 module.exports = require('./webpack.base.babel')({
   mode: 'production',
   entry: [
-    path.join(process.cwd(), 'src/index.js'),
+    path.join(process.cwd(), 'src/index.jsx'),
   ],
   output: {
     filename: '[name].[chunkhash].js',

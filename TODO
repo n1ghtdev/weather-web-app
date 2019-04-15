@@ -1,14 +1,11 @@
-Wednesday, March 3, 2019:
-  ☐ organize folder structure
-  ☐ clear weatherActions.js script file
-  ☐ get current weather, 5-day forecast by location key
+Monday, April 15, 2019:
+  ✔ refactor to React project @done(19-04-15 18:34)
+    ✔ use redux and redux-saga @done(19-04-15 18:34)
+    ✔ use react-router @done(19-04-15 18:34)
+  ✔ fix api-call structure @done(19-04-15 18:35)
+  ☐ clean up in server-side files
 
-Thursday, March 4, 2019:
-  ☐ clear up in client-side index.js
-  ✔ cache some data in localStorage @done(19-04-04 22:06)
-  ☐ refactor typesOptions
-
-Tuesday, March 2, 2019:
+Tuesday, April 2, 2019:
   ✔ determine user location by making a call to server @done(19-04-03 21:55)
   (https://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node)
     ✔ on page load make call to server @done(19-04-03 21:54)
