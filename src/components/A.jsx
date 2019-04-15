@@ -8,8 +8,8 @@ const Link = styled.a`
   font-size: ${({ fontSize }) => typeof fontSize === 'string' ? fontSize : `${fontSize}px`};
   font-style: ${({ fontStyle }) => fontStyle};
   color: ${({ Color }) => Color};
-
   transition: all .25s;
+
   &:hover {
     opacity: .75;
   }

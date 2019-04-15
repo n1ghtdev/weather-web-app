@@ -1,8 +1,8 @@
 const keywords = {
   'clear-day': {
     url: 'https://cdn.allwallpaper.in/wallpapers/2400x1350/11755/beach-blue-sky-2400x1350-wallpaper.jpg',
-    pos: '0 52%',
-    background: 'rgb(132, 197, 233)',
+    pos: '0 35%',
+    background: 'rgb(58, 91, 110)',
     blurred: true,
   },
   'clear-night': {

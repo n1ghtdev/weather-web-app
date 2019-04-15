@@ -11,6 +11,7 @@ import Icon from '../components/Icon';
 import List from '../components/List';
 import { convertDate } from '../utils/convertUNIXtoDate';
 import Section from '../components/Section';
+import { H2 } from '../components/Headings';
 
 const DailyForecast = React.memo((props) => {
   const { weather } = props;
@@ -18,8 +19,13 @@ const DailyForecast = React.memo((props) => {
   return (
     <Section>
       <Container>
+        <Row>
+          <Col textAlign="center" Margin="40px auto 20px auto">
+            <H2>Daily Forecast</H2>
+          </Col>
+        </Row>
         <Row justifyContent="center">
-          <Col lg={12} Margin="50px auto">
+          <Col lg={12} Margin="0 auto">
             <List flex justifyContent="center">
               <Carousel
                 slidesToShow={5}

@@ -28,8 +28,21 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-    border: none;
-    padding: 12px 25px;
+  border: none;
+  border-bottom: 2px solid #ececec;
+  border-right: 1px solid #f3f3f3;
+  background-color: #fff;
+  color: #b7b7b7;
+  cursor: pointer;
+  padding-right: 10px;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:before {
+    content: '|';
+    margin: 0 10px;
+    color: #e4e4e4;
+  }
 `;
 
 Form.Row = Row;

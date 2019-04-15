@@ -21,12 +21,15 @@ class SearchForm extends Component {
     e.preventDefault();
 
     this.props.getForecastByQuery(this.state.query);
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'));
+    }, 500);
   }
   render() {
     return (
       <Container>
         <Row Padding="20px 0">
-          <Col lg={8} Margin="0 auto">
+          <Col lg={8} sm={10} Margin="0 auto">
             <Form onSubmit={this.onSubmit}>
               <Form.Row>
                 <Form.Label htmlFor="search-input">
@@ -39,7 +42,7 @@ class SearchForm extends Component {
                   />
                 </Form.Label>
               </Form.Row>
-              <Form.Button type="button">Search</Form.Button>
+              <Form.Button type="submit">Search</Form.Button>
             </Form>
           </Col>
         </Row>

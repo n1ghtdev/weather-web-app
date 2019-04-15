@@ -10,15 +10,21 @@ import List from '../components/List';
 import Icon from '../components/Icon';
 import { convertTime } from '../utils/convertUNIXtoDate';
 import Section from '../components/Section';
+import { H2 } from '../components/Headings';
 
 const HourlyForecast = React.memo((props) => {
   const { weather } = props;
   const weatherData = weather.data.slice(0, 23);
   return (
     <Section>
-      <Container >
+      <Container>
+        <Row>
+          <Col textAlign="center" Margin="20px auto 20px auto">
+            <H2>Hourly Forecast</H2>
+          </Col>
+        </Row>
         <Row justifyContent="center">
-          <Col lg={12} Margin="40px auto 20px auto">
+          <Col lg={12}>
             <List flex justifyContent="center">
               <Carousel
                 slidesToShow={7}
