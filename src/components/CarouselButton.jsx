@@ -5,17 +5,28 @@ const CarouselButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  color: rgb(55,135,255);
+  color: rgb(215, 231, 255);
   text-decoration: none;
   font-size: 1.5rem;
-  transition: transform .25s;
+  transition: transform 0.25s;
+  width: 32px;
+  height: 32px;
   &:hover {
     transform: scale(1.5);
   }
   &:disabled,
   &[disabled] {
-    color: rgb(131, 152, 184);
+    & > svg {
+      & > path {
+        fill: rgb(131, 152, 184);
+      }
+    }
     cursor: not-allowed;
+  }
+  & > svg {
+    & > path {
+      fill: #fff;
+    }
   }
 `;
 

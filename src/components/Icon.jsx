@@ -39,15 +39,15 @@ const icons = {
 };
 
 const Wrapper = styled.i`
-  color: #000;
-  font-size: 1.5rem;
+  color: #fff;
+  font-size: ${({ FontSize }) => FontSize};
   font-weight: normal;
   font-style: normal;
   font-family: 'MeteoconsRegular';
 `;
 
-const Icon = (props) => (
-  <Wrapper>{ icons[props.iconName].src }</Wrapper>
+const Icon = props => (
+  <Wrapper FontSize={props.FontSize}>{icons[props.iconName].src}</Wrapper>
 );
 
 Icon.propTypes = {
@@ -64,6 +64,11 @@ Icon.propTypes = {
     'thunderstorm',
     'cloudy',
   ]),
+  FontSize: PropTypes.string,
+};
+
+Icon.defaultProps = {
+  FontSize: '1.5rem',
 };
 
 export default Icon;
