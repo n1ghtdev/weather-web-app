@@ -1,4 +1,5 @@
 import path from 'path';
+import { HashedModuleIdsPlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
 import TerserPlugin from 'terser-webpack-plugin';
@@ -6,9 +7,7 @@ import CompressionPlugin from 'compression-webpack-plugin';
 
 module.exports = require('./webpack.base.babel')({
   mode: 'production',
-  entry: [
-    path.join(process.cwd(), 'src/index.jsx'),
-  ],
+  entry: [path.join(process.cwd(), 'src/index.jsx')],
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
@@ -37,28 +36,25 @@ module.exports = require('./webpack.base.babel')({
     nodeEnv: 'production',
     sideEffects: true,
     concatenateModules: true,
+    // runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'all',
-      minSize: 30000,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      name: true,
+      chunks: 'initial',
+      maxInitialRequests: 10,
+      minSize: 0,
       cacheGroups: {
-        commons: {
+        react: {
+          test: /react/,
+          name: 'react',
+          chunks: 'all',
+          enforce: true,
+        },
+        vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
-          chunks: 'all',
-        },
-        main: {
-          chunks: 'all',
-          minChunks: 2,
-          reuseExistingChunk: true,
-          enforce: true,
+          priority: -10,
         },
       },
     },
-    runtimeChunk: false,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -96,9 +92,14 @@ module.exports = require('./webpack.base.babel')({
         },
       ],
     }),
+    new HashedModuleIdsPlugin({
+      hashFunction: 'sha256',
+      hashDigest: 'hex',
+      hashDigestLength: 20,
+    }),
   ],
   performance: {
-    assetFilter: (assetFilename) =>
+    assetFilter: assetFilename =>
       !/(\.map$)|(^(main\.|favicon\.))/.test(assetFilename),
   },
 });
