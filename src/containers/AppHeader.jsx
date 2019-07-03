@@ -2,20 +2,35 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Nav from '../components/Nav';
+import Container from '../components/Container';
+import Row from '../components/Row';
+
+import SearchForm from './SearchForm';
 
 const AppHeader = () => (
   <Header>
-    <Nav>
-      <Nav.Item>
-        <Nav.Link as={Link} to="/">Mainpage</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link as={Link} to="/about">About</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link as={Link} to="/contacts">Contacts</Nav.Link>
-      </Nav.Item>
-    </Nav>
+    <Container>
+      <Row alignItems="center">
+        <Nav>
+          <Nav.Item>
+            <Nav.Link as={Link} to="/">
+              Mainpage
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={Link} to="/about">
+              About
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link as={Link} to="/contacts">
+              Contacts
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+        <SearchForm />
+      </Row>
+    </Container>
   </Header>
 );
 

@@ -6,20 +6,17 @@ const Nav = styled.ul`
   display: flex;
   list-style-type: none;
   height: 100%;
-  margin-top: -3px;
 `;
 
 const Item = styled.li`
   height: 100%;
+  transition: background-color 0.15s;
   &:hover {
-      background-color: #e9e9e9;
-      & > ${Link} {
-        color: #2a2d30;
-      } 
-    }
-    &:last-child {
-      margin-right: 0;
-    }
+    background-color: #3171af;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
 `;
 
 const Link = styled(A)`
@@ -28,10 +25,12 @@ const Link = styled(A)`
   height: 100%;
   padding-left: 20px;
   padding-right: 20px;
-  color: #4a5157;
+  color: #fff;
   text-decoration: none;
   font-size: 0.875rem;
-  ${({ active }) => active && `
+  ${({ active }) =>
+    active &&
+    `
     background-color: green;
   `}
 `;
