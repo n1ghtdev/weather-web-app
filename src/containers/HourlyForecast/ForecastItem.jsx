@@ -16,6 +16,7 @@ const Temperature = styled.span`
 const Summary = styled.span`
   display: block;
   font-size: 0.875rem;
+  min-height: 35px;
 `;
 const Time = styled.span`
   display: block;

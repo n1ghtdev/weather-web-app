@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Icon from '../../components/Icon';
+import bp from '../../breakpoints';
 
 const Wrapper = styled.div`
   text-align: center;
@@ -21,8 +22,13 @@ const TempLow = styled.span`
 const Summary = styled.span`
   display: block;
   font-size: 0.875rem;
-  min-height: 2rem;
+  min-height: 30px;
   padding: 0 15px;
+
+  @media ${bp.mobile} {
+    min-height: 70px;
+    padding: 0 5px;
+  }
 `;
 const Time = styled.span`
   display: block;

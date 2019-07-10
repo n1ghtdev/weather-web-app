@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Nav from '../components/Nav';
-import Container from '../components/Container';
-import Row from '../components/Row';
+import Header from './Header';
+import Nav from './Nav';
+import Container from '../../components/Container';
+import Row from '../../components/Row';
 
-import SearchForm from './SearchForm';
+import SearchForm from '../SearchForm';
 
 const AppHeader = () => (
   <Header>

@@ -5,6 +5,7 @@ import AppHeader from './AppHeader';
 import MainPage from '../pages/MainPage';
 import AboutPage from '../pages/AboutPage';
 import ContactsPage from '../pages/ContactsPage';
+import { WindowProvider } from './WindowProvider';
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -13,14 +14,16 @@ const AppWrapper = styled.div`
 `;
 
 const App = () => (
-  <AppWrapper>
-    <AppHeader />
-    <Switch>
-      <Route exact path="/" component={MainPage} />
-      <Route exact path="/about" component={AboutPage} />
-      <Route exact path="/contacts" component={ContactsPage} />
-    </Switch>
-  </AppWrapper>
+  <WindowProvider>
+    <AppWrapper>
+      <AppHeader />
+      <Switch>
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/about" component={AboutPage} />
+        <Route exact path="/contacts" component={ContactsPage} />
+      </Switch>
+    </AppWrapper>
+  </WindowProvider>
 );
 
 export default App;

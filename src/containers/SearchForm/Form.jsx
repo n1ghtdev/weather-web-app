@@ -2,13 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import SearchIcon from 'svg-react-loader!../../assets/svg/search-icon.svg';
+import bp from '../../breakpoints';
 
 const Form = styled.form`
   margin-left: auto;
   display: flex;
+
+  @media ${bp.mobile} {
+    width: 100%;
+  }
 `;
 
-const Label = styled.label``;
+const Label = styled.label`
+  @media ${bp.mobile} {
+    width: 100%;
+  }
+`;
 
 const Input = styled.input`
   background-color: #3171af;
@@ -19,6 +28,10 @@ const Input = styled.input`
   padding: 0 10px;
   font-size: 1.15rem;
   color: #fff;
+
+  @media ${bp.mobile} {
+    width: 100%;
+  }
 `;
 
 const ButtonWrapper = styled.button`

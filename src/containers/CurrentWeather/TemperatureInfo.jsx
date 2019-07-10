@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Icon from '../../components/Icon';
+
 const Wrapper = styled.div``;
 const StyledIcon = styled(Icon)``;
 const Temperature = styled.span`

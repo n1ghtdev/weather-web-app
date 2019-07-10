@@ -1,16 +1,23 @@
+Wed, July 03, 2019:
+  ☐ SearchForm onChange event which provides additional information from API;
+  ☐ responsive design:
+    ✔ mobile; @done(19-07-10 20:21)
+    ☐ tablet;
+    ☐ laptop, desktop;
+  ☐ change background depending on weather;
+
 Monday, April 15, 2019:
-  ✔ refactor to React project @done(19-04-15 18:34)
-    ✔ use redux and redux-saga @done(19-04-15 18:34)
-    ✔ use react-router @done(19-04-15 18:34)
-  ✔ fix api-call structure @done(19-04-15 18:35)
   ☐ clean up in server-side files
   ☐ global app settings
     ☐ toggle global System of Units (fahrenhet/miles to celsius/kilometers)
 
-Tuesday, April 2, 2019:
+Archive:
+  ✔ refactor to React project @done(19-04-15 18:34)
+  ✔ use redux and redux-saga @done(19-04-15 18:34)
+  ✔ use react-router @done(19-04-15 18:34)
+  ✔ fix api-call structure @done(19-04-15 18:35)
   ✔ determine user location by making a call to server @done(19-04-03 21:55)
-  (https://stackoverflow.com/questions/8107856/how-to-determine-a-users-ip-address-in-node)
-    ✔ on page load make call to server @done(19-04-03 21:54)
-    ✔ server determines ip address @done(19-04-03 21:54)
-    ✔ check ip address geolocation with AccuWeather API @done(19-04-03 21:55)
-    ✘ return geolocation @cancelled(19-04-03 21:55)
+  ✔ on page load make call to server @done(19-04-03 21:54)
+  ✔ server determines ip address @done(19-04-03 21:54)
+  ✔ check ip address geolocation with AccuWeather API @done(19-04-03 21:55)
+  ✘ return geolocation @cancelled(19-04-03 21:55)
