@@ -13,8 +13,8 @@ import CarouselWrapper from '../CarouselWrapper';
 
 import { convertDate } from '../../utils/convertUNIXtoDate';
 
-const DailyForecast = React.memo(({ weather }) => {
-  const weatherData = weather.data;
+const DailyForecast = ({ weather }) => {
+  const { data } = weather;
   return (
     <Section>
       <Container>
@@ -31,7 +31,7 @@ const DailyForecast = React.memo(({ weather }) => {
                 dragging={false}
                 heightMode="max"
               >
-                {weatherData.map((item, index) => (
+                {data.map((item, index) => (
                   <ForecastItem
                     key={index}
                     icon={item.icon}
@@ -48,7 +48,7 @@ const DailyForecast = React.memo(({ weather }) => {
       </Container>
     </Section>
   );
-});
+};
 
 DailyForecast.propTypes = {
   weather: PropTypes.object,

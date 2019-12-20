@@ -13,7 +13,7 @@ import CarouselWrapper from '../CarouselWrapper';
 
 import { convertTime } from '../../utils/convertUNIXtoDate';
 
-const HourlyForecast = React.memo(({ weather }) => {
+const HourlyForecast = ({ weather }) => {
   const weatherData = weather.data.slice(0, 23);
   return (
     <Section>
@@ -43,7 +43,7 @@ const HourlyForecast = React.memo(({ weather }) => {
       </Container>
     </Section>
   );
-});
+};
 
 HourlyForecast.propTypes = {
   weather: PropTypes.object,
