@@ -1,34 +1,38 @@
 import fetch from 'node-fetch';
-import { API_KEY, GOOGLE_API_KEY } from '../config/apiKey';
+import { API_KEY, GEOCODING_API_KEY } from '../config/apiKey';
 
 const WEATHER_API = 'https://api.darksky.net/forecast/';
 const IP_INDENTIFY_API = 'http://ip-api.com/';
-const LOCATION_API = 'https://maps.googleapis.com/maps/api/geocode/';
-
+const LOCATION_API = `https://eu1.locationiq.com/v1/search.php?key=${GEOCODING_API_KEY}`;
+//limit=1
+// resp =>  [{lat,lon}] or {lat,lon}
 // filter data for weather API
 const excludeBlocks = ['minutely', 'alerts'];
 
-const getLocationApiUrl = (query) =>
-  `${LOCATION_API}json?address=${query}&key=${GOOGLE_API_KEY}`;
+const getLocationApiUrl = query =>
+  `${LOCATION_API}&q=${query}&format=json&limit=1`;
 
-const getIPIndentifyApiUrl = (IPAddress) =>
+const getIPIndentifyApiUrl = IPAddress =>
   `${IP_INDENTIFY_API}json/${IPAddress}`;
 
 const getWeatherApiUrl = (lat, lon, exclude) =>
-  `${WEATHER_API}${API_KEY}/${lat},${lon}?units=si&exclude=${Array.isArray(exclude) ?
-    exclude.join(',') :
-    exclude}`;
+  `${WEATHER_API}${API_KEY}/${lat},${lon}?units=si&exclude=${
+    Array.isArray(exclude) ? exclude.join(',') : exclude
+  }`;
 
-
-const validateIPAddress = (IPAddress) => {
-  if (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(IPAddress)) {
+const validateIPAddress = IPAddress => {
+  if (
+    /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
+      IPAddress,
+    )
+  ) {
     return true;
   }
   return false;
 };
 
 // location by IP
-const getLocationByIP = async (IPAddress) => {
+const getLocationByIP = async IPAddress => {
   const isValid = validateIPAddress(IPAddress) || false;
 
   if (!isValid) {
@@ -41,20 +45,21 @@ const getLocationByIP = async (IPAddress) => {
 };
 
 // location by search query
-const getLocationByQuery = async (query) => {
-  // validation
-
+const getLocationByQuery = async query => {
   const requestUrl = getLocationApiUrl(query);
-  const response = await getRequest(requestUrl).then(data => {
-    if (data.status === 'OK') {
-      return data.results[0].geometry.location;
+  try {
+    const response = await getRequest(requestUrl);
+
+    if (response) {
+      return { lat: response[0].lat, lng: response[0].lon };
     }
+  } catch (e) {
+    console.error(e.message);
     return { lat: 0, lng: 0 };
-  });
-  return response;
+  }
 };
 
-export const getWeatherForecastByQuery = async (query) => {
+export const getWeatherForecastByQuery = async query => {
   const { lat, lng } = await getLocationByQuery(query).then(data => data);
 
   const requestUrl = getWeatherApiUrl(lat, lng, excludeBlocks);
@@ -62,7 +67,7 @@ export const getWeatherForecastByQuery = async (query) => {
   return response;
 };
 
-export const getWeatherForecastByIP = async (IPAddress) => {
+export const getWeatherForecastByIP = async IPAddress => {
   const { lat, lon } = await getLocationByIP(IPAddress).then(data => data);
 
   const requestUrl = getWeatherApiUrl(lat, lon, excludeBlocks);
@@ -70,7 +75,7 @@ export const getWeatherForecastByIP = async (IPAddress) => {
   return response;
 };
 
-const getRequest = async (url) => {
+const getRequest = async url => {
   try {
     const response = await fetch(url, {
       method: 'GET',
