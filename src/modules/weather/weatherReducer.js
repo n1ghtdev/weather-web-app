@@ -9,18 +9,11 @@ const initialState = {
 
 function weatherReducer(state = initialState, action) {
   switch (action.type) {
-    case types.GET_FORECAST_BY_QUERY:
+    case types.FETCH_FORECAST_REQUEST:
       return { ...state, loading: true };
-    case types.GET_FORECAST_BY_QUERY_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        loaded: true,
-        data: action.payload,
-      };
-    case types.GET_FORECAST_BY_IP:
+    case types.FETCH_FORECAST_IP_REQUEST:
       return { ...state, loading: true };
-    case types.GET_FORECAST_BY_IP_SUCCESS:
+    case types.FETCH_FORECAST_SUCCESS:
       return {
         ...state,
         loading: false,

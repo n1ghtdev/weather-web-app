@@ -1,7 +1,4 @@
-export const GET_FORECAST_BY_QUERY = 'GET_FORECAST_BY_QUERY';
-export const GET_FORECAST_BY_IP = 'GET_FORECAST_BY_IP';
-
-export const GET_FORECAST_BY_QUERY_SUCCESS = 'GET_FORECAST_BY_QUERY_SUCCESS';
-export const GET_FORECAST_BY_IP_SUCCESS = 'GET_FORECAST_BY_IP_SUCCESS';
-
-export const REQUEST_FAILURE = 'REQUEST_FAILURE';
+export const FETCH_FORECAST_REQUEST = 'weather/fetchRequest';
+export const FETCH_FORECAST_IP_REQUEST = 'weather/fetchByIPRequest';
+export const FETCH_FORECAST_SUCCESS = 'weather/fetchSuccess';
+export const REQUEST_FAILURE = 'fetchFailure';
